@@ -1,0 +1,7 @@
+org\avanza\training\data\entity\User.class
+org\avanza\training\service\RegistrationManagerDefault.class
+org\avanza\training\controller\Controller.class
+org\avanza\training\data\repository\UserRepository.class
+org\avanza\training\model\RegistrationRequestDTO.class
+org\avanza\training\service\RegistrationManager.class
+org\avanza\training\Application.class
