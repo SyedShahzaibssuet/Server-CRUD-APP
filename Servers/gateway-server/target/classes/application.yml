@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      routes:
+        - id: Crud_Service
+          uri: lb://API-TRAINING-SERVICE
+          predicates:
+          - Path=/training/**
+          filters:
+          - RewritePath=/training/(?<segment>.*), /$\{segment}
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8762
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
